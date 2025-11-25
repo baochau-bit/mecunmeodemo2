@@ -1,0 +1,87 @@
+
+/*Giỏ hàng*/
+/* Màu chữ nâu thương hiệu */
+.text-brown {
+    color: var(--title) !important;
+    font-weight: 600;
+}
+
+/* Ẩn số hiển thị trong input number cho gọn */
+input[type=number]::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
+/* Style cho bảng giỏ hàng */
+.table th {
+    border-top: none;
+    color: #666;
+    font-weight: 600;
+}
+/* --- 1. BO VIỀN CHO KHUNG (BOX & CARD) --- */
+.cart-box, .card {
+    border-radius: 20px !important; /* Bo cong 20px (khá mềm mại) */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important; /* Đổ bóng nhẹ cho nổi */
+    border: none !important; /* Bỏ đường viền xám mặc định của Bootstrap */
+    overflow: hidden; /* Giúp các góc không bị nội dung bên trong che mất */
+}
+/* Chọn tất cả ảnh nằm trong dòng sản phẩm giỏ hàng */
+.cart-item img {
+    width: 80px;       /* Chiều rộng cố định (bạn có thể chỉnh lên 100px nếu muốn to hơn) */
+    height: 80px;      /* Chiều cao cố định (bằng chiều rộng để thành hình vuông) */
+    object-fit: cover; /* QUAN TRỌNG: Giúp ảnh tự cắt để lấp đầy khung mà không bị méo/dẹt */
+    border-radius: 10px; /* Bo góc nhẹ cho đẹp (nếu thẻ img chưa có class rounded) */
+    border: 1px solid #eee; /* Viền mờ nhẹ để ảnh nổi bật trên nền trắng */
+}
+
+/* --- 2. BO VIỀN CHO NÚT (BUTTON) --- */
+.btn {
+    border-radius: 50px !important; /* Bo tròn kiểu viên thuốc (Pill shape) */
+    padding-left: 25px !important; /* Tăng độ rộng nút cho đẹp */
+    padding-right: 25px !important;
+}
+
+/* --- 3. BO VIỀN CHO Ô NHẬP LIỆU (INPUT) --- */
+.form-control {
+    border-radius: 50px !important;
+    padding-left: 20px;
+}
+
+/* --- 4. XỬ LÝ CHỖ NHẬP COUPON (Input dính liền Nút) --- */
+/* Vì input và nút dính nhau nên phải chỉnh riêng góc nối */
+.input-group .form-control {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.input-group .btn {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    padding-left: 20px !important; /* Chỉnh lại padding cho cân */
+}
+/* GHI ĐÈ class của Bootstrap */
+.btn-outline {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Quan trọng: Phải chỉnh cả hiệu ứng khi di chuột (Hover) */
+.btn-outline:hover {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important; /* Chữ chuyển thành trắng */
+}
+/* Áp dụng cho tiêu đề lớn, bảng sản phẩm và khung tổng tiền */
+.container h2,         /* Tiêu đề "Giỏ hàng của bạn" */
+.cart-box,              /* Bảng sản phẩm bên trái */
+.card,                  /* Khung tính tiền bên phải */
+.btn {                  /* Các nút bấm */
+    font-family: 'Alata', sans-serif !important;
+}
+
+/* Chỉnh thêm độ đậm cho các tiêu đề nhìn cho rõ */
+h2, h5, h6, .fw-bold {
+    font-weight: bold !important; /* Đậm hơn */
+}
+h5, h6, .h5, .h6 {
+    font-family: 'Alata', sans-serif !important;
+}

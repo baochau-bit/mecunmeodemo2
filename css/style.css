@@ -25,6 +25,7 @@
 /*top bar css*/
 .top-bar {
     font-family: 'Alata', sans-serif;
+    font-weight: 300;
     background-color: var(--primary);
     color: #FFFFFF;
     padding: 12px 40px;
@@ -135,49 +136,36 @@
     padding-right: 90px;
 }
 
-.sticky-top.nav-link {
-    padding: 20px 0;
+/* --- 2. HIỆU ỨNG GẠCH CHÂN CHẠY RA (Underline) --- */
+/* Tạo một đường kẻ ẩn có độ rộng bằng 0 */
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    background-color: var(--primary); /* Màu xanh rêu của đường kẻ */
+    height: 3px;               /* Độ dày đường kẻ */
+    width: 0;                  /* Ban đầu ẩn đi (độ rộng = 0) */
+    left: 50%;                 /* Bắt đầu từ giữa chữ */
+    bottom: 0;
+    transition: 0.3s ease;     /* Thời gian chạy hiệu ứng */
+    transform: translateX(-50%); /* Căn giữa chuẩn xác */
 }
 
-.nav-link:hover
-{
+/* Khi rê chuột vào: Đường kẻ dài ra 100% */
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Khi rê chuột vào: Đổi màu chữ sang xanh */
+.navbar-nav .nav-link:hover {
     color: var(--primary) !important;
 }
-.nav-link.active {
-    color: var(--primary);
+
+/* Giữ hiệu ứng cho menu đang được chọn (Active) */
+.navbar-nav .nav-link.active {
+    color: var(--primary) !important;
 }
-
-@media (min-width: 992px) {
-    .nav-link::before {
-        position: absolute;
-        content: "";
-        width: 0;
-        height: 7px;
-        top: -4px;
-        left: 50%;
-        background: var(--primary);
-        transition: .5s;
-    }
-
-    .nav-link:hover::before,
-    .nav-link.active:before {
-        width: 100%;
-        left: 0;
-    }
-
-    .nav-link.nav-contact::before {
-        width: 100%;
-        height: 1px;
-        top: -1px;
-        left: 0;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .nav-link  {
-        margin-left: 0;
-        padding: 10px 0;
-    }
+.navbar-nav .nav-link.active::after {
+    width: 100%;
 }
 
 /* 3. CHỈNH ICON BÊN PHẢI */
@@ -563,81 +551,95 @@
     width: 50px;
 }
 
-/*Giỏ hàng*/
-/* Màu chữ nâu thương hiệu */
-.text-brown {
-    color: var(--title) !important;
-    font-weight: 600;
+/* --- CẤU HÌNH CHUNG FOOTER --- */
+.footer-section {
+    background-color: var(--primary); 
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-family: 'Alata', sans-serif;
+    font-size: 15px;
+    color: white;
+    margin-top: 150px;
 }
 
-/* Ẩn số hiển thị trong input number cho gọn */
-input[type=number]::-webkit-inner-spin-button {
-    opacity: 1;
+/* Tiêu đề lớn (Slogan) */
+.footer-heading {
+    font-weight: 700;
+    color: var(--secondary); 
+    font-size: 24px;
+    line-height: 1.4;
+    font-family: 'Alata', sans-serif;
 }
 
-/* Style cho bảng giỏ hàng */
-.table th {
-    border-top: none;
-    color: #666;
-    font-weight: 600;
-}
-/* --- 1. BO VIỀN CHO KHUNG (BOX & CARD) --- */
-.cart-box, .card {
-    border-radius: 20px !important; /* Bo cong 20px (khá mềm mại) */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important; /* Đổ bóng nhẹ cho nổi */
-    border: none !important; /* Bỏ đường viền xám mặc định của Bootstrap */
-    overflow: hidden; /* Giúp các góc không bị nội dung bên trong che mất */
+/* Tiêu đề cột nhỏ */
+.footer-title {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Alata', sans-serif;
+    color: white;
 }
 
-/* --- 2. BO VIỀN CHO NÚT (BUTTON) --- */
-.btn {
-    border-radius: 50px !important; /* Bo tròn kiểu viên thuốc (Pill shape) */
-    padding-left: 25px !important; /* Tăng độ rộng nút cho đẹp */
-    padding-right: 25px !important;
+/* Danh sách liên hệ */
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+}
+.footer-contact-list li {
+    margin-bottom: 12px;
+    line-height: 1.6;
 }
 
-/* --- 3. BO VIỀN CHO Ô NHẬP LIỆU (INPUT) --- */
-.form-control {
-    border-radius: 50px !important;
-    padding-left: 20px;
+/* Danh sách link chính sách */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li {
+    margin-bottom: 12px;
+}
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-links a:hover {
+    color: var(--secondary); /* Màu vàng khi di chuột */
+    padding-left: 5px; /* Hiệu ứng đẩy nhẹ sang phải */
 }
 
-/* --- 4. XỬ LÝ CHỖ NHẬP COUPON (Input dính liền Nút) --- */
-/* Vì input và nút dính nhau nên phải chỉnh riêng góc nối */
-.input-group .form-control {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+/* Đường kẻ ngang mờ */
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.15);
+    margin: 10px 0;
 }
 
-.input-group .btn {
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-    padding-left: 20px !important; /* Chỉnh lại padding cho cân */
+/* --- ICON MẠNG XÃ HỘI TRÒN --- */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
-/* GHI ĐÈ class của Bootstrap */
-.btn-outline {
-    color: var(--primary) !important;
-    border-color: var(--primary) !important;
+.footer-socials a {
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%; /* Bo tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-socials a:hover {
+    background-color: white;
+    color: var(--primary);
+    transform: translateY(-3px);
 }
 
-/* Quan trọng: Phải chỉnh cả hiệu ứng khi di chuột (Hover) */
-.btn-outline:hover {
-    background-color: var(--primary) !important;
-    border-color: var(--primary) !important;
-    color: white !important; /* Chữ chuyển thành trắng */
-}
-/* Áp dụng cho tiêu đề lớn, bảng sản phẩm và khung tổng tiền */
-.container h2,         /* Tiêu đề "Giỏ hàng của bạn" */
-.cart-box,              /* Bảng sản phẩm bên trái */
-.card,                  /* Khung tính tiền bên phải */
-.btn {                  /* Các nút bấm */
-    font-family: 'Alata', sans-serif !important;
+.copyright-text {
+    font-size: 13px;
+    opacity: 0.7;
 }
 
-/* Chỉnh thêm độ đậm cho các tiêu đề nhìn cho rõ */
-h2, h5, h6, .fw-bold {
-    font-weight: 600 !important; /* Đậm hơn */
-}
-h5, h6, .h5, .h6 {
-    font-family: 'Alata', sans-serif !important;
-}
