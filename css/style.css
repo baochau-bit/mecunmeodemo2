@@ -1,4 +1,3 @@
-/********** Template CSS **********/
 *{
     margin: 0;
     padding: 0;
@@ -136,58 +135,53 @@
     padding-right: 90px;
 }
 
-/* --- 2. HIỆU ỨNG GẠCH CHÂN CHẠY RA (Underline) --- */
-/* Tạo một đường kẻ ẩn có độ rộng bằng 0 */
+/*hiệu ứng menu*/
 .navbar-nav .nav-link::after {
     content: "";
     position: absolute;
-    background-color: var(--primary); /* Màu xanh rêu của đường kẻ */
-    height: 3px;               /* Độ dày đường kẻ */
-    width: 0;                  /* Ban đầu ẩn đi (độ rộng = 0) */
-    left: 50%;                 /* Bắt đầu từ giữa chữ */
+    background-color: var(--primary); 
+    height: 3px;            
+    width: 0;                 
+    left: 50%;                
     bottom: 0;
-    transition: 0.3s ease;     /* Thời gian chạy hiệu ứng */
-    transform: translateX(-50%); /* Căn giữa chuẩn xác */
+    transition: 0.3s ease;    
+    transform: translateX(-50%); 
 }
 
-/* Khi rê chuột vào: Đường kẻ dài ra 100% */
 .navbar-nav .nav-link:hover::after {
     width: 100%;
 }
 
-/* Khi rê chuột vào: Đổi màu chữ sang xanh */
 .navbar-nav .nav-link:hover {
     color: var(--primary) !important;
 }
 
-/* Giữ hiệu ứng cho menu đang được chọn (Active) */
 .navbar-nav .nav-link.active {
     color: var(--primary) !important;
 }
 .navbar-nav .nav-link.active::after {
     width: 100%;
 }
-
-/* 3. CHỈNH ICON BÊN PHẢI */
+/*icon*/
 .navbar-icons {
     display: flex;
-    gap: 25px; /* Khoảng cách giữa các icon */
+    gap: 25px; 
     align-items: center;
     padding-right:100px;
 }
 
 .icon-link {
-    color: var(--title); /* Màu nâu giống chữ menu */
-    font-size: 20px; /* Kích thước icon */
+    color: var(--title); 
+    font-size: 20px; 
     transition: transform 0.2s, color 0.2s;
     display: flex;
     position: relative;
 }
 
-/* Hiệu ứng hover icon */
+/*hiệu ứng cho icon*/
 .icon-link:hover {
-    color: var(--primary); /* Đổi màu xanh */
-    transform: translateY(-2px); /* Nhảy nhẹ lên trên cho đẹp */
+    color: var(--primary); 
+    transform: translateY(-2px); 
 }
 
 .badge-cart {
@@ -195,7 +189,7 @@
     top: -8px;
     right: -10px;
     background-color: var(--secondary); 
-    color: var(--dark); /* Màu chữ bên trong badge */
+    color: var(--dark); 
     font-size: 10px;
     width: 18px;
     height: 18px;
@@ -205,6 +199,7 @@
     font-weight: bold;
     justify-content: center;
 }
+/*end navigation bar*/
 
 .hero-header {
     background: url(../img/hero.jpg) top right no-repeat;
@@ -551,7 +546,8 @@
     width: 50px;
 }
 
-/* --- CẤU HÌNH CHUNG FOOTER --- */
+/*--footer start--*/
+/* cấu hình chung cho footer */
 .footer-section {
     background-color: var(--primary); 
     padding-top: 50px;
@@ -562,7 +558,7 @@
     margin-top: 150px;
 }
 
-/* Tiêu đề lớn (Slogan) */
+/* slogan */
 .footer-heading {
     font-weight: 700;
     color: var(--secondary); 
@@ -571,7 +567,7 @@
     font-family: 'Alata', sans-serif;
 }
 
-/* Tiêu đề cột nhỏ */
+/* tiêu đề cột */
 .footer-title {
     font-weight: 700;
     font-size: 24px;
@@ -580,7 +576,7 @@
     color: white;
 }
 
-/* Danh sách liên hệ */
+/* liên hệ */
 .footer-contact-list {
     list-style: none;
     padding: 0;
@@ -590,7 +586,7 @@
     line-height: 1.6;
 }
 
-/* Danh sách link chính sách */
+/* link chính sách */
 .footer-links {
     list-style: none;
     padding: 0;
@@ -603,18 +599,17 @@
     text-decoration: none;
     transition: 0.3s;
 }
-.footer-links a:hover {
-    color: var(--secondary); /* Màu vàng khi di chuột */
-    padding-left: 5px; /* Hiệu ứng đẩy nhẹ sang phải */
+.footer-links a:hover { /* hiệu ứng di chuột */
+    color: var(--secondary); 
+    padding-left: 5px; 
 }
 
-/* Đường kẻ ngang mờ */
 .footer-divider {
     border-color: rgba(255, 255, 255, 0.15);
     margin: 10px 0;
 }
 
-/* --- ICON MẠNG XÃ HỘI TRÒN --- */
+/*icon mxh*/
 .footer-socials {
     display: flex;
     justify-content: center;
@@ -624,7 +619,7 @@
     width: 35px;
     height: 35px;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%; /* Bo tròn */
+    border-radius: 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -642,4 +637,5 @@
     font-size: 13px;
     opacity: 0.7;
 }
+/*end footer css*/
 
