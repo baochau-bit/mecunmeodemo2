@@ -603,7 +603,7 @@ h1, h2 {
 .btn {
     display: inline-flex;
     align-items: center;
-    background: #7AA36F;
+    background: #768862  ;
     padding: 12px 26px;
     border-radius: 40px;
     text-decoration: none;
@@ -615,7 +615,7 @@ h1, h2 {
 }
 
 .btn:hover {
-    background: #6B925F;
+    background: #768862  ;
 }
 
 .btn i {
@@ -635,50 +635,151 @@ h1, h2 {
 
 /*--PHAN SU MENH --*/
 .mission-section {
-    background: #768862;
-    padding: 40px 20px 20px;
+    background: var(--primary);
+    padding: 38px 0;
 }
 
 
 .mission-wrapper {
-    min-height: auto; 
-    padding: 30px 0;  
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.mission-text {
+    flex: 1 1 55%;
+    padding-left: 60px;
 }
 
 .mission-text h2 {
-    color: #FFF8CC;
+    color: var(--secondary);
     font-size: 50px;
-    font-weight: 700;
-    margin-bottom: 40px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    line-height: 0.95;
 }
 
 .mission-text p {
-    color: #FFF8CC;
-    font-size: 17px;    /* đổi từ 20px -> 17px */
+    color: var(--secondary);
+    font-size: 17px;
     line-height: 2;
-    margin-bottom: 15px;
+    max-width: 620px;
+    margin-bottom: 22px;
+    opacity: 0.95;
+}
+
+.mission-image {
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: center;
 }
 
 .mission-image img {
-    max-width: 480px;
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Responsive */
 @media (max-width: 992px) {
-    .mission-text h2 {
-        font-size: 50px;
+    .mission-text h2 { font-size: 56px; }
+    .mission-image img { max-width: 320px; }
+    .mission-text { padding-left: 30px; }
+}
+
+@media (max-width: 768px) {
+    .mission-wrapper { flex-direction: column; text-align: center; }
+    .mission-text { order: 2; padding-left: 0; }
+    .mission-image { order: 1; margin-bottom: 20px; }
+    .mission-text h2 { font-size: 44px; }
+    .mission-text p { margin: 0 auto 16px; }
+}
+
+/*--PHAN TAM NHIN--*/
+/* Import Font Alata */
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+/* ==== TỔNG THỂ SECTION ==== */
+.vision-section {
+    background: #ffffff;
+    padding: 60px 0;
+}
+
+/* ==== WRAPPER 2 CỘT ==== */
+.vision-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+/* ==== ẢNH ==== */
+.vision-image {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.vision-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
+
+/* ==== TEXT ==== */
+.vision-text {
+    flex: 1;
+}
+
+.vision-text h2 {
+    font-family: 'Alata', sans-serif;
+    font-size: 50px;          /* ⭐ Theo yêu cầu */
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #5c3b35;
+}
+
+.vision-text p {
+    font-family: 'Alata', sans-serif;
+    font-size: 17px;          /* ⭐ Theo yêu cầu */
+    line-height: 1.8;
+    color: #5c3b35;
+    margin-bottom: 18px;
+    max-width: 540px;
+}
+
+.vision-text strong {
+    font-weight: 700;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 900px) {
+    .vision-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
     }
 
-    .mission-image img {
+    .vision-text h2 {
+        font-size: 40px;
+    }
+
+    .vision-text p {
+        margin: 0 auto 18px;
+        font-size: 16px;
+    }
+
+    .vision-image img {
         max-width: 360px;
     }
 }
 
-@media (max-width: 768px) {
-    .mission-text {
-        text-align: center;
-    }
-}
 
 
 /*--PHAN GIA TRI COT LOI--*/
