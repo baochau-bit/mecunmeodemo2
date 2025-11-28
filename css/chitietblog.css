@@ -546,217 +546,103 @@
     width: 50px;
 }
 
+/*--end menu--*/
 
 
-/* ========================================= */
-/* BLOG HERO BANNER – NỀN MÀU KHÔNG DÙNG ẢNH */
-/* ========================================= */
 
-.blog-hero {
-    min-height: 277px;
-    background: #768862; /* <-- ĐỔI TỪ ẢNH THÀNH MÀU */
-    display: flex;
-    align-items: center;
-    margin-bottom: 5rem;
-    position: relative;
+/*--GIAO DIEN CHI TIET BLOG */
+/* Áp dụng font Alata cho toàn bộ trang */
+body, html, h1, h2, h3, h4, h5, h6, p, a, span, div, input, button, textarea, li {
+    font-family: 'Alata', sans-serif !important;
+}
+/* TIÊU ĐỀ CHÍNH BÀI VIẾT CHI TIẾT – 50PX */
+.col-lg-8 h1,
+.mb-5 h1,
+h1.text-uppercase.mb-4 {
+    font-size: 27px !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    color: #563333 !important;
+    letter-spacing: -0.5px;
 }
 
-/* Đưa nội dung chữ lên trên lớp phủ */
-.blog-hero .container {
-    position: relative;
-    z-index: 2;
+/* NÚT GỬI BÌNH LUẬN - MÀU CHÍNH #768862 */
+.bg-light .btn-primary {
+    background-color: #768862 !important;
+    border-color: #768862 !important;
+    color: #ffffff !important;
 }
 
-/* Breadcrumb đẹp hơn */
-.blog-hero .breadcrumb {
-    background: transparent;
-    font-size: 1.15rem;
-    font-weight: 500;
+.bg-light .btn-primary:hover {
+    background-color: #5a6b49 !important;
+    border-color: #5a6b49 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(118, 136, 98, 0.4);
 }
 
-.blog-hero .breadcrumb-item a {
-    color: rgba(255,255,255,0.8) !important;
-    transition: 0.3s;
-}
-.blog-hero .breadcrumb-item a:hover {
-    color: #fff !important;
-    text-decoration: underline;
+/* Dổi màu TÊN người bình luận */
+.mb-5 .d-flex h6 a {
+    color: #768862 !important;
+    font-weight: 600 !important;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .blog-hero {
-        min-height: 320px;
-    }
-    .blog-hero h1 {
-        font-size: 3.2rem !important;
-    }
+/* LÀM CHỮ TRONG MỤC BÀI VIẾT GẦN NHẤT THÀNH MÀU ĐEN */
+.col-lg-4 .d-flex a,
+.col-lg-4 .bg-light a,
+.mb-5 .d-flex a.h5 {
+    color: #000000 !important;   /* đen tuyền */
+    font-weight: 500 !important; /* hơi đậm cho dễ đọc */
 }
 
+/* ==BÀI VIẾT GẦN NHẤT,  KHÔNG ẢNH HƯỞNG COMMENT ==================== */
 
-/* ==================== BLOG CARD – ẢNH ĐỒNG ĐỀU 100% ==================== */
-
-.blog-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border: none !important;
-    border-radius: 16px;
+/* Chỉ áp dụng cho khối Recent Post */
+.mb-5 > .d-flex.overflow-hidden {
+    display: flex !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    margin-bottom: 20px !important;
+    border-radius: 10px !important;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: all 0.35s ease;
-    background: white;
-}
-
-.blog-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* ẢNH: cố định chiều cao, cắt đẹp, zoom khi hover */
-.blog-card img {
-    width: 100%;
-    height: auto;                    /* bỏ height cố định */
-    aspect-ratio: 1 / 1;             /* Dòng này làm ảnh vuông hoàn hảo */
-    object-fit: cover;               /* cắt ảnh đẹp, không méo */
-    object-position: center;         /* căn giữa phần quan trọng của ảnh */
-    transition: transform 0.5s ease;
-    border-radius: 16px 16px 0 0;     /* bo góc trên (tùy chọn) */
-}
-
-.blog-card:hover img {
-    transform: scale(1.08);
-}
-
-/* Nội dung card */
-.blog-card .card-body {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 24px;
-    background: white;
-}
-
-/* Tiêu đề: tối đa 3 dòng, dư thì cắt */
-.blog-card .card-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: #563333 !important;   /* ← thêm !important là xong 100% */
-    margin-bottom: 12px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    flex-grow: 1;
-}
-
-/* Ngày luôn ở đáy card */
-.blog-card .text-primary {
-    margin-top: auto;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--primary) !important;
-}
-
-/* Responsive – ảnh nhỏ lại trên tablet & mobile */
-@media (max-width: 992px) {
-    .blog-card img { height: 220px; }
-}
-
-@media (max-width: 768px) {
-    .blog-card img { height: 200px; }
-    .blog-card .card-body { padding: 20px; }
-}
-
-@media (max-width: 576px) {
-    .blog-card img { height: 180px; }
-}
-
-
-/* ================ PHÂN TRANG  – SỐ 1 2 CHÍNH GIỮA TRANG ================ */
-.blog-custom-pagination {
-    font-family: 'Alata', sans-serif;
-    font-weight: 600;
-    height: 60px;                     /* cố định chiều cao để căn giữa đẹp */
-}
-
-/* Số trang nằm đúng giữa trang */
-.page-numbers {
-    display: flex;
-    gap: 14px;
-    z-index: 1;
-}
-
-.page-numbers .page-num {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    font-size: 16px;
-    color: #563333;
-    border: 1.8px solid #563333;
-    border-radius: 10px;
-    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
 }
 
-.page-numbers .page-num.active,
-.page-numbers .page-num:hover {
-    background-color: #8B6F47;
-    color: white;
-    transform: scale(1.05);
-}
-
-/* Nút TIẾP THEO – bo góc vừa phải */
-.btn-next {
-    display: inline-flex;
-    align-items: center;
-    padding: 11px 28px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #563333;
-    border: 1.8px solid #563333;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.btn-next:hover {
-    background-color: #563333;
-    color: white;
-    transform: translateX(3px);
-}
-
-.btn-next i {
-    font-size: 14px;
+/* Ảnh trong Recent Post */
+.mb-5 > .d-flex.overflow-hidden > img {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover !important;
+    flex-shrink: 0;
     transition: transform 0.3s ease;
 }
 
-.btn-next:hover i {
-    transform: translateX(6px);
+/* Ô xám bên phải */
+.mb-5 > .d-flex.overflow-hidden > .recent-post-title {
+    flex: 1;
+    background: #f8f9fa !important;
+    color: #000000 !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    padding: 0 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1.5 !important;
+    transition: all 0.3s ease;
 }
 
-/* Mobile: đẹp lung linh */
-@media (max-width: 576px) {
-    .blog-custom-pagination {
-        flex-direction: column;
-        height: auto;
-        padding: 20px 0;
-    }
-    .page-numbers {
-        position: static !important;
-        transform: none !important;
-        margin-bottom: 15px;
-    }
-    .btn-next {
-        margin-left: 0 !important;
-    }
+/* Hover */
+.mb-5 > .d-flex.overflow-hidden:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(118, 136, 98, 0.2);
 }
-
-
+.mb-5 > .d-flex.overflow-hidden:hover > img {
+    transform: scale(1.08);
+}
+.mb-5 > .d-flex.overflow-hidden:hover > .recent-post-title {
+    background: #768862 !important;
+    color: #ffffff !important;
+}
 
 
 
@@ -854,5 +740,6 @@
     opacity: 0.7;
 }
 /*end footer css*/
+
 
 
