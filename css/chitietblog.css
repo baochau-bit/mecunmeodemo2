@@ -549,13 +549,14 @@
 /*--end menu--*/
 
 
+CSS/*-- GIAO DIỆN CHI TIẾT BLOG --*/
 
-/*--GIAO DIEN CHI TIET BLOG */
-/* Áp dụng font Alata cho toàn bộ trang */
-body, html, h1, h2, h3, h4, h5, h6, p, a, span, div, input, button, textarea, li {
+/* Font Alata toàn trang */
+body, h1, h2, h3, h4, h5, h6, p, a, span, div, input, button, textarea, li {
     font-family: 'Alata', sans-serif !important;
 }
-/* TIÊU ĐỀ CHÍNH BÀI VIẾT CHI TIẾT – 50PX */
+
+/* Tiêu đề bài viết chính */
 .col-lg-8 h1,
 .mb-5 h1,
 h1.text-uppercase.mb-4 {
@@ -566,49 +567,35 @@ h1.text-uppercase.mb-4 {
     letter-spacing: -0.5px;
 }
 
-/* NÚT GỬI BÌNH LUẬN - MÀU CHÍNH #768862 */
+/* Nút Gửi bình luận */
 .bg-light .btn-primary {
     background-color: #768862 !important;
     border-color: #768862 !important;
-    color: #ffffff !important;
+    color: #fff !important;
 }
-
 .bg-light .btn-primary:hover {
     background-color: #5a6b49 !important;
     border-color: #5a6b49 !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(118, 136, 98, 0.4);
+    box-shadow: 0 8px 20px rgba(118,136,98,0.4);
 }
 
-/* Dổi màu TÊN người bình luận */
+/* Tên người bình luận */
 .mb-5 .d-flex h6 a {
     color: #768862 !important;
     font-weight: 600 !important;
 }
 
-/* LÀM CHỮ TRONG MỤC BÀI VIẾT GẦN NHẤT THÀNH MÀU ĐEN */
-.col-lg-4 .d-flex a,
-.col-lg-4 .bg-light a,
-.mb-5 .d-flex a.h5 {
-    color: #000000 !important;   /* đen tuyền */
-    font-weight: 500 !important; /* hơi đậm cho dễ đọc */
-}
-
-/* ==BÀI VIẾT GẦN NHẤT,  KHÔNG ẢNH HƯỞNG COMMENT ==================== */
-
-/* Chỉ áp dụng cho khối Recent Post */
+/* Recent Post – khối chứa */
 .mb-5 > .d-flex.overflow-hidden {
     display: flex !important;
     align-items: stretch !important;
-    gap: 0 !important;
     margin-bottom: 20px !important;
     border-radius: 10px !important;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
 }
-
-/* Ảnh trong Recent Post */
 .mb-5 > .d-flex.overflow-hidden > img {
     width: 100px !important;
     height: 100px !important;
@@ -616,12 +603,10 @@ h1.text-uppercase.mb-4 {
     flex-shrink: 0;
     transition: transform 0.3s ease;
 }
-
-/* Ô xám bên phải */
 .mb-5 > .d-flex.overflow-hidden > .recent-post-title {
     flex: 1;
     background: #f8f9fa !important;
-    color: #000000 !important;
+    color: #000 !important;
     font-weight: 500 !important;
     font-size: 15px !important;
     padding: 0 18px !important;
@@ -631,19 +616,54 @@ h1.text-uppercase.mb-4 {
     transition: all 0.3s ease;
 }
 
-/* Hover */
+/* Hover Recent Post */
 .mb-5 > .d-flex.overflow-hidden:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(118, 136, 98, 0.2);
+    box-shadow: 0 10px 25px rgba(118,136,98,0.2);
 }
 .mb-5 > .d-flex.overflow-hidden:hover > img {
     transform: scale(1.08);
 }
 .mb-5 > .d-flex.overflow-hidden:hover > .recent-post-title {
     background: #768862 !important;
-    color: #ffffff !important;
+    color: #fff !important;
 }
 
+/* Tiêu đề phụ: 3 Bình luận + Bài Viết Gần Nhất + Để lại bình luận */
+h3.text-uppercase.border-start.border-primary {
+    font-size: 20px !important;
+    color: #563333 !important;
+    font-weight: 700 !important;
+}
+
+/* Bài Viết Gần Nhất – to hơn, nổi bật hơn */
+.col-lg-4 h3.text-uppercase.border-start.border-primary {
+    font-size: 24px !important;
+    color: #563333!important;
+    font-weight: 800 !important;
+}
+
+/* Để lại bình luận (trong form) */
+.bg-light.rounded h3.text-uppercase {
+    font-size: 20px !important;
+    color: #563333!important;
+    font-weight: 700 !important;
+}
+
+/* Khối Voucher 30K – nhỏ gọn, đẹp */
+div > .bg-light.text-center h3.text-uppercase.mb-3 {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #563333 !important;
+}
+div > .bg-light.text-center p {
+    font-size: 14.5px !important;
+    margin-bottom: 18px !important;
+}
+div > .bg-light.text-center .btn-primary {
+    font-size: 15px !important;
+    padding: 10px 26px !important;
+}
 
 
 

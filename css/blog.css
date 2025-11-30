@@ -561,13 +561,12 @@
     position: relative;
 }
 
-/* Đưa nội dung chữ lên trên lớp phủ */
+/* Breadcrumb trong Blog Hero  */
 .blog-hero .container {
     position: relative;
     z-index: 2;
 }
 
-/* Breadcrumb đẹp hơn */
 .blog-hero .breadcrumb {
     background: transparent;
     font-size: 1.15rem;
@@ -578,11 +577,20 @@
     color: rgba(255,255,255,0.8) !important;
     transition: 0.3s;
 }
+
 .blog-hero .breadcrumb-item a:hover {
     color: #fff !important;
     text-decoration: underline;
 }
 
+/* Dấu gạch chéo "/" cùng màu với chữ Trang chủ + trắng khi hover */
+.blog-hero .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+.blog-hero .breadcrumb-item a:hover + .breadcrumb-item::before {
+    color: #fff !important;
+}
 /* Responsive */
 @media (max-width: 768px) {
     .blog-hero {
